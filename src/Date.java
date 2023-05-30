@@ -6,7 +6,7 @@ public class Date {
     private int month;
     private int year;
     public Date(int year, int month, int day){
-        if(year < -9999 || year > 9999)
+        if(year < -3999 || year > 3999)
             this.year = 0;
         else
             this.year = year;
@@ -21,18 +21,40 @@ public class Date {
 
     }
 
+    public int getYear(){return this.year;}
+    public int getMonth(){return this.month;}
+    public int getDay(){return this.day;}
+    public void setYear(int year){
+        if(year < - 3999 || year > 3999)
+            this.year = 0;
+        else
+            this.year = year;
+    }
+    public void setMonth(int month){
+        if(month < 1 || month > 12)
+            this.month = 1;
+        else
+            this.month = month;
+    }
+    public void setDay(int day){
+        if(day < 1 || day > 31)
+            this.day = 1;
+        else
+            this.day = day;
+    }
+
     /**
      * This function compares between this object and another one and checks whether the values
      * of their attributes are equal
-     * @param object the other object we're comparing the current object to
+     * @param obj the other object we're comparing the current object to
      * @return true if their attributes are completely equal and false otherwise
      */
     @Override
-    public boolean equals(Object object){
-        if(!(object instanceof Date) || object == null)
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Date) || obj == null)
             return false;
         else{
-            Date other = (Date)object;
+            Date other = (Date)obj;
             return this.year == other.year && this.month == other.month && this.day == other.day;
         }
     }
