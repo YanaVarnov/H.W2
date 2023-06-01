@@ -28,19 +28,20 @@ public class DateTime extends Date {
     }
     @Override
     public int hashCode(Object object){
-        boolean compareValue =equals(object);
-        int num = super.hashCode();
-        if(!compareValue)
+         int num = super.hashCode();
          return (num + 60 * hour + minute);
-        else
-            return (60 * hour + minute);
     }
 
     public void setHour(int hour){
-        this.hour = hour;
+        if (hour < 0 || hour > 23)
+            this.hour = 0;
+        else this.hour = hour;
     }
-    public void setMinute(int minute){
-        this.minute = minute;
+    public void setMinute(int minute) {
+        if (minute < 0 || minute > 59)
+            this.minute = 0;
+        else
+            this.minute = minute;
     }
     public int getHour(){
        return hour;
