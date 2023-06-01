@@ -32,6 +32,6 @@ public abstract class Function {
         return newtonRaphsonMethod(a, epsilon);
     }
 
-    public abstract Function taylorPolynomial(int n);
+    //public abstract Function taylorPolynomial(int n);
 
 }

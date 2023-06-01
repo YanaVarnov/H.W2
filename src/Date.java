@@ -1,4 +1,4 @@
-public abstract class Date {
+public class Date {
     /**
      * This class describes a date in a format of day/month/year
      */
@@ -53,10 +53,10 @@ public abstract class Date {
     public boolean equals(Object obj) {
         if(!(obj instanceof Date) || obj == null)
             return false;
-        else{
-            Date other = (Date)obj;
-            return this.year == other.year && this.month == other.month && this.day == other.day;
-        }
+        else if (this.hashCode() != obj.hashCode())
+            return false;
+        else
+            return true;
     }
 
     private boolean isLeapYear(int year){
@@ -102,8 +102,6 @@ public abstract class Date {
         }
         return hash;
     }
-
-    public abstract int hashCode(Object object);
 
     /**
      * This function takes the object's information and represents it as a String

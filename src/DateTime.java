@@ -27,9 +27,9 @@ public class DateTime extends Date {
         }
     }
     @Override
-    public int hashCode(Object object){
+    public int hashCode(){
          int num = super.hashCode();
-         return (num + 60 * hour + minute);
+         return (num + 60 * hour + minute) * 2;
     }
 
     public void setHour(int hour){
@@ -61,9 +61,9 @@ public class DateTime extends Date {
             dataTime += this.hour + ":";
 
         if(this.minute < 10)
-            dataTime += " 0" + this.minute + ":";
+            dataTime += "0" + this.minute;
         else
-            dataTime += this.minute + ":";
+            dataTime += this.minute;
 
         return dataTime;
     }
