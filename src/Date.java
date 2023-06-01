@@ -1,4 +1,4 @@
-public class Date {
+public abstract class Date {
     /**
      * This class describes a date in a format of day/month/year
      */
@@ -102,6 +102,8 @@ public class Date {
         }
         return hash;
     }
+
+    public abstract int hashCode(Object object);
 
     /**
      * This function takes the object's information and represents it as a String

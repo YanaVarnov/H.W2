@@ -27,9 +27,28 @@ public class DateTime extends Date {
         }
     }
     @Override
-    public int hashCode(){
-        return 60 * hour + minute;
+    public int hashCode(Object object){
+        boolean compareValue =equals(object);
+        int num = super.hashCode();
+        if(!compareValue)
+         return (num + 60 * hour + minute);
+        else
+            return (60 * hour + minute);
     }
+
+    public void setHour(int hour){
+        this.hour = hour;
+    }
+    public void setMinute(int minute){
+        this.minute = minute;
+    }
+    public int getHour(){
+       return hour;
+    }
+    public int getMinute(){
+        return minute;
+    }
+
 
     @Override
     public String toString(){
