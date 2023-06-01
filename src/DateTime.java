@@ -55,12 +55,12 @@ public class DateTime extends Date {
         String dataTime = super.toString();
 
         if(this.hour < 10)
-            dataTime += "0" + this.hour + ":";
+            dataTime += " 0" + this.hour + ":";
         else
             dataTime += this.hour + ":";
 
         if(this.minute < 10)
-            dataTime += "0" + this.minute + ":";
+            dataTime += " 0" + this.minute + ":";
         else
             dataTime += this.minute + ":";
 
