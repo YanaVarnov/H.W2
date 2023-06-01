@@ -33,14 +33,24 @@ public abstract class Function {
     }
 
     private double factorial(double n){
-        return 0;
+        if(n == 0 || n == 1)
+            return 1;
+        else{
+            double value = 1;
+            for(double i = 2; i <= n; i++)
+                value *= i;
+            return value;
+        }
     }
     public Polynomial taylorPolynomial(int n){
         double[] coff = new double[n + 1];
         Function current = this;
         for(int i = 0; i < n + 1; i++){
-            coff[i] = current.valueAt(0) /
+            coff[i] = current.valueAt(0) / factorial(i);
+            current = current.derivative();
         }
+        Polynomial taylor = new Polynomial(coff);
+        return taylor;
     }
 
 }

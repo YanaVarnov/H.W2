@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Quotient extends Function {
     private Function function1;

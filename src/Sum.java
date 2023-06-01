@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Sum extends MultiSum {
     private Function function1;

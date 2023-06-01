@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Power extends Product{
 

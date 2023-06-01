@@ -1,8 +1,6 @@
-import java.util.function.Function;
-
 public class Product extends Function {
-    private Function function1;
-    private Function function2;
+    protected Function function1;
+    protected Function function2;
 
     public Product(Function function1,Function function2){
         this.function1 = function1;
