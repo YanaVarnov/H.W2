@@ -65,45 +65,70 @@ public class Polynomial extends Function {
                 else if(this.coefficients[1] == -1)
                     str += " - x";
                 else if(this.coefficients[1] > 0){
-                    if(this.coefficients[1] % 1)
+                        if(flagInt)
+                            str += " + " + (int)this.coefficients[1] + "x";
+                        else
+                            str += " + " + this.coefficients[1] + "x";
                 }
-                    str += " + " + this.coefficients[1] + "x";
-                else
-                    str += " - " + (this.coefficients[1] * -1) + "x";
+                else{
+                    if(flagInt)
+                    str += " - " + (int)(this.coefficients[1] * -1) + "x";
+                    else
+                        str += " - " + (this.coefficients[1] * -1) + "x";
+
+                }
             }
         }
         for(int i = 2; i < this.coefficients.length; i++){
+            flagInt = false;
+            if(this.coefficients[i] % 1 == 0)
+                flagInt = true;
             if(flagFirst){
                 if(this.coefficients[i] == 0)
                     continue;
-                else if(this.coefficients[1] == 1) {
+                else if(this.coefficients[i] == 1) {
                     str += "x^" + i;
                     flagFirst = false;
                 }
-                else if(this.coefficients[1] == -1){
+                else if(this.coefficients[i] == -1){
                     str += "-x^" + i;
                     flagFirst = false;
                 }
                 else{
-                    str += this.coefficients[1] + "x^" + i;
-                    flagFirst = false;
+                    if(flagInt){
+                        str += (int)this.coefficients[i] + "x^" + i;
+                        flagFirst = false;
+                    }
+                    else{
+                        str += this.coefficients[i] + "x^" + i;
+                        flagFirst = false;
+                    }
+
                 }
             }
             else{
                 if(this.coefficients[i] == 0)
                     continue;
-                else if(this.coefficients[1] == 1)
+                else if(this.coefficients[i] == 1)
                     str += " + x^" + i;
-                else if(this.coefficients[1] == -1)
+                else if(this.coefficients[i] == -1)
                     str += " - x^" + i;
-                else if(this.coefficients[1] > 0)
-                    str += " + " + this.coefficients[1] + "x^" + i;
-                else
-                    str += " - " + (this.coefficients[1] * -1) + "x^" + i;
+                else if(this.coefficients[i] > 0){
+                    if(flagInt)
+                        str += " + " + (int)this.coefficients[i] + "x^" + i;
+                    else
+                        str += " + " + this.coefficients[i] + "x^" + i;
+                }
+                else{
+                    if(flagInt)
+                        str += " - " + (int)(this.coefficients[i] * -1) + "x^" + i;
+                    else
+                        str += " - " + (this.coefficients[i] * -1) + "x^" + i;
+                }
             }
 
         }
         str += ")";
-        return "";
+        return str;
     }
 }

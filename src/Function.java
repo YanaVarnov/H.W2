@@ -32,6 +32,15 @@ public abstract class Function {
         return newtonRaphsonMethod(a, epsilon);
     }
 
-    //public abstract Function taylorPolynomial(int n);
+    private double factorial(double n){
+        return 0;
+    }
+    public Polynomial taylorPolynomial(int n){
+        double[] coff = new double[n + 1];
+        Function current = this;
+        for(int i = 0; i < n + 1; i++){
+            coff[i] = current.valueAt(0) /
+        }
+    }
 
 }
