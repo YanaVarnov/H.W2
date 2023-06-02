@@ -1,5 +1,6 @@
+import java.util.function.Function;
 
-public class Product extends MultiProduct {
+public class Product extends Function {
     private Function function1;
     private Function function2;
 
@@ -14,12 +15,12 @@ public class Product extends MultiProduct {
     }
 
     @Override
-    public MultiSum derivative(){
-        return super.derivative();
+    public class derivative(){
+
     }
 
     @Override
-    public String toString(){
-        return super.toString();
+    public class toString(){
+
     }
 }
