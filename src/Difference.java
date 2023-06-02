@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Difference extends Function {
     private Function function1;
@@ -15,16 +14,15 @@ public class Difference extends Function {
     }
 
     @Override
-    public class derivative(){
-        function1.derivative() - function2.derivaive();
+    public Difference derivative(){
+        Difference dvtDiff = new Difference(this.function1.derivative(),this.function2.derivative());
+        return dvtDiff;
     }
 
     @Override
     public String toString(){
-        return function1.toString() - function2.toString();
-
-
-
+       String str = "(" + this.function1.toString() + " - " + this.function2.toString() + ")";
+       return str;
     }
 }
 

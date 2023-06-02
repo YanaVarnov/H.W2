@@ -1,7 +1,6 @@
 
 public class MultiSum extends Function{
     private Function []functions;
-    //private Function multiFunction;
     private int numOfFunc;
 
     public MultiSum(Function...functions){
@@ -18,22 +17,29 @@ public class MultiSum extends Function{
         double sum = 0;
         for (int i = 0; i < numOfFunc; i++) {
             sum += functions[i].valueAt(x);
+        }
             return sum;
         }
-    }
 
     @Override
-    public Polynomial derivative(){
-        return function1.derivative() + function2.derivaive();
+    public MultiSum derivative(){
+        int i;
+        Function[] miniFunc = new Function[this.numOfFunc];
+        for(i=0;i<numOfFunc;i++){
+            miniFunc[i]=this.functions[i].derivative();
+        }
+        MultiSum finalDvt = new MultiSum(miniFunc);
+        return finalDvt;
     }
 
     @Override
     public String toString(){
-        int i;
-        for(i=0;i<numOfFunc-1;i++){
-
+        String str = "(";
+        for(int i = 0; i < this.numOfFunc - 1; i++){
+            str += this.functions[i].toString() + " + ";
         }
-
+        str += this.functions[this.numOfFunc - 1].toString() + ")";
+        return str;
     }
 
 

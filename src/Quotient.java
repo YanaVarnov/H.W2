@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Quotient extends Function {
     private Function function1;
@@ -15,15 +14,15 @@ public class Quotient extends Function {
     }
 
     @Override
-    public class derivative(){
-
-
+    public Quotient derivative(){
+        int i;
+        Quotient dvtQvt = new Quotient(this.function1.derivative(),this.function2.derivative());
+        return dvtQvt;
     }
 
     @Override
-    public class toString(){
-
-
-
+    public String toString() {
+        String str = "(" + this.function1.toString() + " / " + this.function2.toString() + ")";
+        return str;
     }
 }

@@ -1,4 +1,3 @@
-import java.util.function.Function;
 
 public class Sum extends MultiSum {
     private Function function1;
@@ -14,15 +13,13 @@ public class Sum extends MultiSum {
     }
 
     @Override
-    public Polynomial derivative(){
-        return function1.derivative() + function2.derivaive();
+    public MultiSum derivative(){
+        return super.derivative();
     }
 
     @Override
     public String toString(){
-       return function1.toString() + function2.toString();
-
-
+       return super.toString();
     }
 
 }

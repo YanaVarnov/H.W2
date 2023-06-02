@@ -1,27 +1,30 @@
-import java.util.function.Function;
 
-public class Power extends Product{
+public class Power extends MultiProduct{
 
     private int power;
-    private Function function1;
+    private Function[] functions;
 
-    public Power(Function function1){
-        this.function1 = function1;
+    public Power(int power,Function...functions) {
+        int i = 0;
+        this.power = power;
+        for (i = 0; i < this.power; i++) {
+            this.functions[i] = functions[i];
         }
+    }
 
     @Override
     public double valueAt(double x) {
-        return function1.valueAt(x) / function2.valueAt(x);
+       return super.valueAt(x);
     }
 
     @Override
-    public class derivative(){
-
-
+    public MultiSum derivative(){
+        return super.derivative();
     }
 
     @Override
-    public class toString(){
+    public String toString(){
+        return super.toString();
     }
     }
 
