@@ -1,6 +1,6 @@
 import java.lang.Math;
 public class Polynomial extends Function {
-    private double[] coefficients;
+    protected double[] coefficients;
 
     public Polynomial(double... coefficients){
         this.coefficients = new double[coefficients.length];

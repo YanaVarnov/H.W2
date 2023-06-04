@@ -3,7 +3,7 @@ public class Negation extends Product{
 
     @Override
     public String toString(){
-        String str = "(-" + this.function1.toString() + ")";
+        String str = "(-" + functions[0].toString() + ")";
         return str;
     }
 }

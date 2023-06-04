@@ -1,16 +1,13 @@
-
 public class MultiSum extends Function{
-    protected Function []functions;
+    protected Function [] functions;
     private int numOfFunc;
 
-    public MultiSum(Function...functions){
-        int i=0;
-        while(functions[i]!=null) {
+    public MultiSum(Function...functions) {
+        this.numOfFunc = functions.length;
+        this.functions = new Function[numOfFunc];
+        for (int i = 0; i < numOfFunc; i++)
             this.functions[i] = functions[i];
-            i++;
-        }
-        numOfFunc = i;
-        }
+    }
 
     @Override
     public double valueAt(double x) {

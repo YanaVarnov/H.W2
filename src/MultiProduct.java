@@ -4,6 +4,7 @@ public class MultiProduct extends Function{
 
     public MultiProduct(Function ... funcs){
         this.funcNum = funcs.length;
+        this.functions = new Function[this.funcNum];
         for(int i = 0; i < funcNum; i++)
            this.functions[i] = funcs[i];
     }
