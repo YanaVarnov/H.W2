@@ -1,6 +1,6 @@
 
 public class MultiSum extends Function{
-    private Function []functions;
+    protected Function []functions;
     private int numOfFunc;
 
     public MultiSum(Function...functions){

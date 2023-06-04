@@ -1,11 +1,17 @@
 public class MultiProduct extends Function{
-    private Function[] functions;
+    protected Function[] functions;
     private int funcNum;
 
     public MultiProduct(Function ... funcs){
         this.funcNum = funcs.length;
         for(int i = 0; i < funcNum; i++)
            this.functions[i] = funcs[i];
+    }
+
+    public MultiProduct(Function func, int n){
+        this.funcNum = n;
+        for(int i = 0; i < n; i++)
+            this.functions[i] = func;
     }
     @Override
     public double valueAt(double x){

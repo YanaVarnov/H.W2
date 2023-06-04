@@ -1,26 +1,13 @@
-import java.util.function.Function;
 
-public class Product extends Function {
-    private Function function1;
-    private Function function2;
+public class Product extends MultiProduct{
 
     public Product(Function function1,Function function2){
-        this.function1 = function1;
-        this.function2 = function2;
+        super(function1, function2);
     }
 
     @Override
     public double valueAt(double x) {
-        return function1.valueAt(x) * function2.valueAt(x);
+        return functions[0].valueAt(x) * functions[1].valueAt(x);
     }
 
-    @Override
-    public class derivative(){
-
-    }
-
-    @Override
-    public class toString(){
-
-    }
 }
