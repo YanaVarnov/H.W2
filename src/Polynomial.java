@@ -33,11 +33,28 @@ public class Polynomial extends Function {
         }
     }
 
-
+    private boolean AllZero(){
+        for(int i = 0; i < this.coefficients.length; i++){
+            if(this.coefficients[i] != 0)
+                return false;
+        }
+        return true;
+    }
     @Override
     public String toString(){
         String str = "(";
         boolean flagFirst = true, flagInt = false;
+        if(this.coefficients.length == 1){
+            if(this.coefficients[0] % 1 == 0)
+                str += (int)this.coefficients[0] + ")";
+            else
+                str += this.coefficients[0] + ")";
+            return str;
+        }
+        if(this.AllZero()){
+            str += "0)";
+            return str;
+        }
         if(this.coefficients[0] != 0){
             if(this.coefficients[0] % 1 == 0)
                 str += (int)this.coefficients[0];

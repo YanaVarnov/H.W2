@@ -22,8 +22,8 @@ public class MultiSum extends Function{
     public MultiSum derivative(){
         int i;
         Function[] miniFunc = new Function[this.numOfFunc];
-        for(i=0;i<numOfFunc;i++){
-            miniFunc[i]=this.functions[i].derivative();
+        for(i=0; i < numOfFunc; i++){
+            miniFunc[i] = this.functions[i].derivative();
         }
         MultiSum finalDvt = new MultiSum(miniFunc);
         return finalDvt;

@@ -32,15 +32,13 @@ public abstract class Function {
         return newtonRaphsonMethod(a, epsilon);
     }
 
-    private double factorial(double n){
+    private double factorial(int n){
         if(n == 0 || n == 1)
             return 1;
         else{
-            double value = 1,i=1;
-            while(i<=n) {
+            double value = 1;
+            for(int i = 2; i <= n; i++)
                 value *= i;
-                i += 1;
-            }
             return value;
         }
     }
