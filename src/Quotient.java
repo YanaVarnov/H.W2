@@ -10,14 +10,19 @@ public class Quotient extends Function {
 
     @Override
     public double valueAt(double x) {
+
         return function1.valueAt(x) / function2.valueAt(x);
     }
 
     @Override
     public Quotient derivative(){
         int i;
-        Quotient dvtQvt = new Quotient(this.function1.derivative(),this.function2.derivative());
-        return dvtQvt;
+        Product func1 = new Product(this.function1.derivative(),this.function2);
+        Product func2 = new Product(this.function2.derivative(),this.function1);
+        Difference U = new Difference(func1,func2);
+        Power V = new Power(this.function2,2);
+        Quotient dvt = new Quotient(U,V);
+        return dvt;
     }
 
     @Override

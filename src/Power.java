@@ -8,6 +8,8 @@ public class Power extends Function{
     public Power(Function function1, int power) {
         int i=0;
         this.power = power;
+        this.function1 = function1;
+        this.funcs =  new Function[this.power];
         for(i=0;i<this.power;i++){
             this.funcs[i] = this.function1;
         }

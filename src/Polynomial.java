@@ -18,13 +18,19 @@ public class Polynomial extends Function {
     }
 
     @Override
-    public Polynomial derivative(){
-        double[] dvtCo = new double[this.coefficients.length - 1];
-        for(int i = 0; i < dvtCo.length; i++){
-            dvtCo[i] = this.coefficients[i + 1] * (i + 1);
+    public Polynomial derivative() {
+        if (this.coefficients.length == 1) {
+            Constant dvtCo = new Constant(0);
+            return dvtCo;
         }
-        Polynomial dvt = new Polynomial(dvtCo);
-        return dvt;
+        else {
+            double[] dvtCo = new double[this.coefficients.length - 1];
+            for (int i = 0; i < dvtCo.length; i++) {
+                dvtCo[i] = this.coefficients[i + 1] * (i + 1);
+            }
+            Polynomial dvt = new Polynomial(dvtCo);
+            return dvt;
+        }
     }
 
 

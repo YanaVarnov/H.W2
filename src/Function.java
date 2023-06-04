@@ -36,9 +36,11 @@ public abstract class Function {
         if(n == 0 || n == 1)
             return 1;
         else{
-            double value = 1;
-            for(double i = 2; i <= n; i++)
+            double value = 1,i=1;
+            while(i<=n) {
                 value *= i;
+                i += 1;
+            }
             return value;
         }
     }
